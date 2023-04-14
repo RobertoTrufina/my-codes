@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import '../../global.css'
+import './style.css'
 
 import '../searchFilter/SearchFilter'
 import Menu from "../header/menu";
