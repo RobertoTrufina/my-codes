@@ -2,10 +2,14 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 
-import DarkTheme from "./applications/dark-theme/DarkTheme";
-import Menu from "./applications/header/menu";
-import SearchFilter from './applications/searchFilter/SearchFilter';
-import Button from "./applications/styled-components/button/Button";
+import DarkTheme from "./applications/DarkTheme";
+import FilterSearch from "./applications/FilterSearch";
+import Map from "./applications/Map";
+import Menu from "./applications/Menu";
+import Button from "./applications/styled-components/button";
+
+
+
 
 
 
@@ -14,9 +18,10 @@ export default function AppRoutes() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Menu />} />
-        <Route path="/filtrar-pesquisa" element={<SearchFilter />} />
+        <Route path="/filtrar-pesquisa" element={<FilterSearch />} />
         <Route path="/tema-dark" element={<DarkTheme />} />
         <Route path="/botão" element={<Button />} />
+        <Route path="/map" element={<Map />} />
       </Routes>
     </BrowserRouter>
   )

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão de graus</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #2b063a;
+        }
+
+
+        header h3 {
+            height: 50px;
+            background-color: rgb(244, 248, 19);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+            color: #fff;
+        }
+
+
+        section {
+            padding: 15px;
+            width: 350px;
+            height: auto;
+            background-color: #fff;
+            text-align: center;
+            border-radius: 10px;
+            margin: auto;
+        }
+
+        #msg {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 500px;
+        }
+
+        div {
+            border: none;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-bottom: 8px;
+        }
+    </style>
+
+</head>
+
+<body onload="carregar()">
+
+    <header>
+        <h3>EXERCÍCIO #05</h3>
+    </header>
+
+    <span>
+        <h1>Hora do Dia</h1>
+    </span>
+
+    <section>
+        <div id="msg">
+            Aqui vai aparecer uma imagem...
+        </div>
+        <div id="foto">
+            <img id="imagem"
+                src="https://as2.ftcdn.net/v2/jpg/01/84/68/91/1000_F_184689163_SQV3Qb86qcPKHIaLjRzVz7XOmjovEzyX.jpg"
+                alt="240-F-153783752-Pv-Vyavb2z4t86i-UTk-IPt7n-Gd-Nh-XMf-Y5v-cropped" border="0">
+        </div>
+    </section>
+
+    <script>
+
+        function carregar() {
+
+            var msg = document.getElementById('msg')
+            var img = document.getElementById('imagem')
+
+            var data = new Date()
+            var hora = data.getHours()
+            var minutos = data.getMinutes()
+            
+            msg.innerHTML = `agora são ${hora}:${minutos} minutos.`
+            if (hora >= 0 && hora <= 12) {
+                img.src = "https://as2.ftcdn.net/v2/jpg/01/84/68/91/1000_F_184689163_SQV3Qb86qcPKHIaLjRzVz7XOmjovEzyX.jpg"
+                document.body.style.backgroundColor = "#e2cd9f"
+                document.div.style.color = "#red"
+            } else if (hora >= 12 && hora <= 18) {
+                img.src = "https://vidasimples.co/wp-content/uploads/2020/09/sebastien-gabriel-IMlv9Jlb24-unsplash.jpg"
+                document.body.style.backgroundColor = "#b9846f"
+            } else {
+                img.src = "https://img.freepik.com/fotos-premium/noite-na-praia-com-barco-e-luar_104785-846.jpg?w=740"
+                document.body.style.backgroundColor = "#333"
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // var msg = document.getElementById('msg')
+            // var img = document.getElementById('imagem')
+            // var data = new Date()
+            // var hora = data.getHours()
+            // // var hora = 19
+
+            // msg.innerHTML = ` agora são ${hora} horas.`
+            // if (hora >= 0 && hora <= 12) {
+            //     //BOM DIA
+            //     img.src = "https://as2.ftcdn.net/v2/jpg/01/84/68/91/1000_F_184689163_SQV3Qb86qcPKHIaLjRzVz7XOmjovEzyX.jpg"
+            //     document.body.style.backgroundColor = '#e2cd9f'
+
+            // } else if (hora >= 12 && hora <= 18) {
+            //     // BOA TARDE
+            //     img.src = "https://vidasimples.co/wp-content/uploads/2020/09/sebastien-gabriel-IMlv9Jlb24-unsplash.jpg"
+            //     document.body.style.backgroundColor = "#b9846f"
+
+            // } else {
+            //     // BOA NOITA
+            //     img.src = "https://img.freepik.com/fotos-premium/noite-na-praia-com-barco-e-luar_104785-846.jpg?w=740"
+            //     document.body.style.backgroundColor = "#333"
+            // }
+        }
+
+    </script>
+
+</body>
+
+
+</html>

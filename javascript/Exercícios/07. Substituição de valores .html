@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valor do input</title>
+    <title>Substituição de Valores</title>
 
     <style>
         * {
@@ -40,7 +40,7 @@
         form {
             background-color: rgb(146, 70, 165);
             width: 380px;
-            height: 180px;
+            height: 300px;
             color: #fff;
             border: none;
             border-radius: 10px;
@@ -90,24 +90,35 @@
 <body>
 
     <header>
-        <h3>EXERCÍCIO #01</h3>
+        <h3>EXERCÍCIO #02</h3>
     </header>
 
     <div>
         <form>
-            <span>Leia o valor de um input e mostre em um alert.</span>
-            <input type="text" id="valueInput" placeholder="Digite um valor...">
+            <span>Leia os valores A e B. Troque os valores entre as duas variáveis. A variável A passa a possuir o valor
+                da variável B e a variável B passa a possuir o valor da A.</span>
+            <input type="text" id="numA" placeholder="Digite um valor A">
+            <input type="text" id="numB" placeholder="Digite um valor B">
             <button onclick="go()">Enviar</button>
-        </form> 
+        </form>
     </div>
 
 </body>
 
 <script>
     const go = () => {
-        var valueInput = document.querySelector('valueInput').value
-        alert('O valor do input é:' + valueInput)
+        var numberA = document.getElementById('numA').value
+        var numberB = document.getElementById('numB').value
+        var numberC = numberB
+        var numberB = numberA
+        var numberA = numberC
+
+
+        alert('O valor de A: ' + numberA + '\n' +
+            'O valor de B: ' + numberB
+        )
     }
+
 </script>
 
 </html>

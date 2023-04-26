@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-import '../../global.css'
-import './style.css'
+import '../../global.css';
+import './style.css';
 
-import '../searchFilter/SearchFilter'
-import Menu from "../header/menu";
+import '.';
+import Menu from "../Menu";
 
 const frutas = [
     'Banana',
@@ -17,7 +17,7 @@ const frutas = [
 ]
 
 
-export default function SearchFilter() {
+export default function FilterSearch() {
 
     const [busca, setBusca] = useState('')
 
@@ -30,7 +30,7 @@ export default function SearchFilter() {
     return (
         <div>
             <Menu/>
-            <h5>SearchFilters</h5>
+            <h5>Filter Search</h5>
             <hr />
             <h1>Pesquisa com filtro:</h1>
             <input

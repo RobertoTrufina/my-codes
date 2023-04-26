@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operações matemáticas</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #2b063a;
+        }
+
+
+        section {
+            width: auto;
+            height: 90vh;
+            background-color: #2b063a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h3 {
+            background-color: rgb(244, 248, 19);
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            background-color: rgb(146, 70, 165);
+            width: 380px;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* margin-top: 100px; */
+
+        }
+
+        span {
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            padding-bottom: 20px;
+        }
+
+        .num {
+            width: 100%;
+            color: #000000;
+            padding: 8px;
+            border: 1px solid;
+            border-radius: 10px;
+            margin: 10px 50px 0px;
+        }
+
+        .operation {
+            display: flex;
+            margin-top: 10px;
+            gap: 5px;
+        }
+
+        button {
+            margin-top: 10px;
+            width: 100%;
+            height: 30px;
+            background-color: #6f0699;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        button:hover {
+            background-color: #6f0699b9;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h3>EXERCÍCIO #03</h3>
+    </header>
+
+    <section>
+        <form>
+            <span>Leia 2 números. Efetue as 4 operações matemáticas e mostre os resultados</span>
+            <input type="number" class="num" id="valueA" placeholder="Digite o valor de A">
+            <input type="number" class="num" id="valueB" placeholder="Digite o valor de B">
+            <div class="operation">
+                <input type="radio" class="input-addition" id="addition" name="operation" value="Adição">
+                <label for="addition">Adição</label>
+            </div>
+            <div class="operation">
+                <input type="radio" class="input-addition" id="subtraction" name="operation" value="Subtração">
+                <label for="subtraction">Subtração</label>
+            </div>
+            <div class="operation">
+                <input type="radio" class="input-addition" id="multiplication" name="operation" value="Multiplicação">
+                <label for="multiplication">Multiplicação</label>
+            </div>
+            <div class="operation">
+                <input type="radio" class="input-addition" id="division" name="operation" value="Divisão">
+                <label for="division">Divisão</label>
+            </div>
+
+            <button onclick="calculation() ">Enviar</button>
+        </form>
+    </section>
+
+</body>
+
+<script>
+    function calculation() {
+        var value1 = parseInt(document.getElementById('valueA').value)
+        var value2 = parseInt(document.getElementById('valueB').value)
+        var selectOperation = document.querySelector('input[name="operation"]:checked').value
+        var nameOperation
+        var calcOperation
+
+        if (selectOperation == 'Adição') {
+            nameOperation = 'Adição'
+            calcOperation = value1 + value2
+        } else if (selectOperation == 'Subtração') {
+            nameOperation = 'Subtração'
+            calcOperation = value1 - value2
+        } else if (selectOperation == 'Multiplicação') {
+            nameOperation = 'Multiplicação'
+            calcOperation = value1 * value2
+        } else if (selectOperation == 'Divisão') {
+            nameOperation = 'Divisão'
+            calcOperation = value1 / value2
+        }
+
+        alert(`A ${nameOperation} é : ` + calcOperation)
+    }
+</script>
+
+</html>

@@ -3,11 +3,9 @@ import { ThemeProvider } from "styled-components";
 
 import { darkTheme, ligthTheme } from "./ThemeStyle";
 
+import Menu from "../Menu";
 import { GlobalStyle } from "./GlobalStyle";
 import { Container } from "./style";
-
-
-import Menu from "../header/menu";
 
 
 export default function DarkTheme() {
@@ -20,10 +18,13 @@ export default function DarkTheme() {
 
     return (
         <>
-            <Menu />
+
             <ThemeProvider theme={theme === 'light' ? ligthTheme : darkTheme}>
                 <GlobalStyle />
                 <Container>
+                    <Menu />
+                    <h5>Dark-Theme</h5>
+                    <hr />
                     <h1>Hello World!</h1>
                     <button onClick={() => themeToggler()}>Alternar</button>
                 </Container>

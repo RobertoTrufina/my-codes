@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de idade</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #2b063a;
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    header {
+        height: 50px;
+        background-color: rgb(244, 248, 19);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    div#titulo {
+        color: #fff;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        padding: 20px;
+    }
+
+    section {
+        width: 450px;
+        font-size: 16px;
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        margin: auto;
+    }
+
+    form {
+        line-height: 30px;
+    }
+
+    input#year {
+        width: 100px;
+    }
+
+    button {
+        padding: 3px 8px;
+    }
+
+    #msg {
+        text-align: center;
+    }
+
+    img {
+        width: 150px;
+        height: 150px;
+        display: none;
+        border-radius: 100px;
+    }
+</style>
+
+<body>
+    <header>
+        <h3>EXERCÍCIO #06</h3>
+    </header>
+
+    <div id="titulo">
+        <span>Verificador de idade</span>
+    </div>
+
+    <section>
+        <form action="">
+            <div>
+                Ano de nascimento
+                <input type="number" id="year">
+            </div>
+            <div>
+                <span>Sexo: </span>
+                <input type="radio" name="select" id="mas" checked>
+                <label for="mas">Masculino</label>
+                <input type="radio" name="select" id="fem">
+                <label for="fem">Feminino</label>
+            </div>
+            <button value="verificar" onclick="verificar()">Verificar</button>
+
+            <div id="res">
+                Detectamos sexo com a idade...
+            </div>
+        </form>
+    </section>
+
+    <script>
+        function verificar() {
+
+            var date = new Date()
+            var yearCurrent = date.getFullYear()
+            var year = document.getElementById('year')
+            var res = document.getElementById('res')
+            if (year.value.length == 0 || year.value > yearCurrent) {
+                alert('[ERRO] Verifique os dados e tente novamente')
+            } else {
+                alert('tudo ok')
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

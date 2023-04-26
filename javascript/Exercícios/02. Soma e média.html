@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Substituição de Valores</title>
+    <title>Soma e média</title>
 
     <style>
         * {
@@ -22,7 +22,6 @@
 
 
         div {
-            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -34,13 +33,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-
         }
 
         form {
             background-color: rgb(146, 70, 165);
             width: 380px;
-            height: 300px;
+            height: 250px;
             color: #fff;
             border: none;
             border-radius: 10px;
@@ -49,7 +47,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-top: 10%;
+            margin-top: 140px;
+
         }
 
         span {
@@ -95,31 +94,26 @@
 
     <div>
         <form>
-            <span>Leia os valores A e B. Troque os valores entre as duas variáveis. A variável A passa a possuir o valor
-                da variável B e a variável B passa a possuir o valor da A.</span>
-            <input type="text" id="numA" placeholder="Digite um valor A">
-            <input type="text" id="numB" placeholder="Digite um valor B">
-            <button onclick="go()">Enviar</button>
+            <span>Leia as idades de duas pessoas. Após ler, calcular e mostrar a soma e a média delas.</span>
+            <input type="text" id="peopleA" placeholder="Digite uma idade A">
+            <input type="text" id="peopleB" placeholder="Digite uma idade B">
+            <button onclick="result()">Enviar</button>
         </form>
     </div>
 
 </body>
 
 <script>
-    const go = () => {
-        var valueA = document.getElementById('numA').value
-        var valueB = document.getElementById('numB').value
-        var valueC = valueB
-        var valueB = valueA
-        var valueA = valueC
+    function result() {
+        var valueA = parseInt(document.querySelector('#peopleA').value)
+        var valueB = parseInt(document.querySelector('#peopleB').value)
+        var sum = valueA + valueB
+        var average = sum / 2
 
 
-        alert('Variável A: ' + valueA + '\n' +
-              'Variável B: ' + valueB
-        )
-
-
+        alert('Soma: ' + sum + '\n' +
+            'Média: ' + average)
     }
-</script>
+</script> 
 
 </html>

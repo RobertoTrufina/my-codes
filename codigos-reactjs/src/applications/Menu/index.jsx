@@ -20,6 +20,9 @@ export default function Menu() {
                 <Link to="/tema-dark" >
                     <button>Dark-Theme</button>
                 </Link>
+                <Link to="/map" >
+                    <button>Map</button>
+                </Link>
             </header>
         </div>
     )
