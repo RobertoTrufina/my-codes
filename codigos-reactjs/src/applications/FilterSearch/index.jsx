@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 
 import '../../global.css';
-import './style.css';
 
-import '.';
 import Menu from "../Menu";
+
 
 const frutas = [
     'Banana',
@@ -29,7 +28,7 @@ export default function FilterSearch() {
 
     return (
         <div>
-            <Menu/>
+            <Menu />
             <h5>Filter Search</h5>
             <hr />
             <h1>Pesquisa com filtro:</h1>

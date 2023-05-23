@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informar se é um quadrado</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #2b063a;
+        }
+
+
+        div {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h3 {
+            background-color: rgb(244, 248, 19);
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        form {
+            background-color: rgb(146, 70, 165);
+            width: 380px;
+            /* height: 380px; */
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 20px 20px 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 5%;
+        }
+
+        span {
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            padding-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            color: #000000;
+            padding: 8px;
+            border: 1px solid;
+            border-radius: 10px;
+            margin: 10px 50px 0px;
+        }
+
+        select {
+            width: 100%;
+            color: #000000;
+            padding: 8px;
+            border: 1px solid;
+            border-radius: 10px;
+            margin: 10px 50px 0px;
+
+        }
+
+        button {
+            margin-top: 10px;
+            width: 100%;
+            height: 30px;
+            background-color: #6f0699;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        button:hover {
+            background-color: #6f0699b9;
+        }
+
+        h2 {
+            background-color: transparent;
+            text-align: center;
+            height: 5px;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h3>EXERCÍCIO #11</h3>
+    </header>
+
+    <div>
+        <form>
+            <span>Serão informadas as dimensões de quatro lados para verificar se é um quadrado. Se todos os lados forem
+                iguais informe que é um quadrado, caso contrário que não é um quadrado.</span>
+
+            <input type="number" placeholder="lado superior" id="ls">
+            <input type="number" placeholder="lado direito" id="ld">
+            <input type="number" placeholder="lado inferior" id="li">
+            <input type="number" placeholder="lado esquerdo" id="le">
+
+            <input type="button" value="Enviar" onclick="quadrado()">
+
+            <h2 id="mensagem"></h2>
+        </form>
+    </div>
+</body>
+
+<script>
+    function quadrado() {
+        //Valores
+        var ls = document.getElementById('ls').value
+        var ld = document.getElementById('ld').value
+        var li = document.getElementById('li').value
+        var le = document.getElementById('le').value
+
+        //lógica
+
+        if (ls == ld && ls == li && ls == le) {
+            //Mensagem
+            document.getElementById('mensagem').innerHTML = 'É um quadrado'
+        } else {
+            //Mensagem
+            document.getElementById('mensagem').innerHTML = "Não é um quadrado"
+        }
+    }
+
+</script>
+
+</html>

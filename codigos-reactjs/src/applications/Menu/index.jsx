@@ -23,6 +23,9 @@ export default function Menu() {
                 <Link to="/map" >
                     <button>Map</button>
                 </Link>
+                <Link to="/login" >
+                    <button>Login</button>
+                </Link>
             </header>
         </div>
     )

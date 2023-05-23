@@ -1,0 +1,37 @@
+
+.container-form-login {
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper-form {
+    width: 300px;
+    height: 130px;
+    background-color:rgba(137, 43, 226, 0.459);
+    padding: 20px;
+    border-radius: 10px;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 20px;
+    
+}
+.wrapper-form div {
+    width: 300px;
+    display: flex;  
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrapper-form input {
+    width: 200px;
+    padding: 3px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    outline-color: cornflowerblue;
+
+    
+}

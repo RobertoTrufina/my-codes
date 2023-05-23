@@ -7,6 +7,7 @@ import FilterSearch from "./applications/FilterSearch";
 import Map from "./applications/Map";
 import Menu from "./applications/Menu";
 import Button from "./applications/styled-components/button";
+import Login from "./applications/Login/index";
 
 
 
@@ -22,6 +23,7 @@ export default function AppRoutes() {
         <Route path="/tema-dark" element={<DarkTheme />} />
         <Route path="/botão" element={<Button />} />
         <Route path="/map" element={<Map />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   )

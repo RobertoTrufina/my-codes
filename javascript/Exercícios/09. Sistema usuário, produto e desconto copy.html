@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema usuário, produto e desconto</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #2b063a;
+        }
+
+
+        div {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h3 {
+            background-color: rgb(244, 248, 19);
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        form {
+            background-color: rgb(146, 70, 165);
+            width: 380px;
+            /* height: 380px; */
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 20px 20px 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 5%;
+        }
+
+        span {
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            padding-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            color: #000000;
+            padding: 8px;
+            border: 1px solid;
+            border-radius: 10px;
+            margin: 10px 50px 0px;
+        }
+
+        select {
+            width: 100%;
+            color: #000000;
+            padding: 8px;
+            border: 1px solid;
+            border-radius: 10px;
+            margin: 10px 50px 0px;
+
+        }
+
+        button {
+            margin-top: 10px;
+            width: 100%;
+            height: 30px;
+            background-color: #6f0699;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        button:hover {
+            background-color: #6f0699b9;
+        }
+
+        h2 {
+            background-color: transparent;
+            text-align: center;
+            height: 5px;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h3>EXERCÍCIO #09</h3>
+    </header>
+
+    <div>
+        <form>
+            <span>Crie um sistema onde o usuário informa o nome de um produto, o valor e a forma de pagamento. Se o
+                pagamento for a vista dê um desconto de 10% sobre o valor</span>
+
+            <input type="text" placeholder="Produto" id="product">
+            <input type="number" placeholder="Valor" id="price">
+            <select id="payment">
+                <option value="0">Forma de pagamento</option>
+                <option value="1">A vista</option>
+                <option value="2">A prazo</option>
+            </select>
+            <input type="button" value="Enviar" onclick="calcular()">
+
+            <h2 id="mensagem"></h2>
+        </form>
+    </div>
+</body>
+
+<script>
+    function calcular() {
+        var product = document.getElementById('product').value
+        var price = document.getElementById('price').value
+        var payment = document.getElementById('payment').value
+
+        var total
+
+        if (payment == 1) {
+            total = price * 0.9
+        } else {
+            total = price
+        }
+
+        document.getElementById('mensagem').innerHTML = `O valor total do ${product} é R$${total},00`
+    }
+
+</script>
+
+</html>

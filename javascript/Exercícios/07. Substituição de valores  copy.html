@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Substituição de Valores</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #2b063a;
+        }
+
+
+        div {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h3 {
+            background-color: rgb(244, 248, 19);
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        form {
+            background-color: rgb(146, 70, 165);
+            width: 380px;
+            height: 300px;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10%;
+        }
+
+        span {
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            padding-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            color: #000000;
+            padding: 8px;
+            border: 1px solid;
+            border-radius: 10px;
+            margin: 10px 50px 0px;
+        }
+
+        button {
+            margin-top: 10px;
+            width: 100%;
+            height: 30px;
+            background-color: #6f0699;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        button:hover {
+            background-color: #6f0699b9;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h3>EXERCÍCIO #07</h3>
+    </header>
+
+    <div>
+        <form>
+            <span>Leia os valores A e B. Troque os valores entre as duas variáveis. A variável A passa a possuir o valor
+                da variável B e a variável B passa a possuir o valor da A.</span>
+            <input type="text" id="numA" placeholder="Digite um valor A">
+            <input type="text" id="numB" placeholder="Digite um valor B">
+            <button onclick="go()">Enviar</button>
+        </form>
+    </div>
+
+</body>
+
+<script>
+    const go = () => {
+        var numberA = document.getElementById('numA').value
+        var numberB = document.getElementById('numB').value
+        var numberC = numberB
+        var numberB = numberA
+        var numberA = numberC
+
+
+        alert('O valor de A: ' + numberA + '\n' +
+            'O valor de B: ' + numberB
+        )
+    }
+
+</script>
+
+</html>

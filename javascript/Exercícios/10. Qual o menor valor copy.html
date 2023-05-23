@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Substituição de Valores</title>
+    <title>Qual o menor valor</title>
 
     <style>
         * {
@@ -40,16 +40,15 @@
         form {
             background-color: rgb(146, 70, 165);
             width: 380px;
-            height: 300px;
+            /* height: 380px; */
             color: #fff;
             border: none;
             border-radius: 10px;
-            padding: 20px;
+            padding: 20px 20px 50px 20px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            margin-top: 10%;
+            margin-top: 5%;
         }
 
         span {
@@ -68,12 +67,22 @@
             margin: 10px 50px 0px;
         }
 
+        select {
+            width: 100%;
+            color: #000000;
+            padding: 8px;
+            border: 1px solid;
+            border-radius: 10px;
+            margin: 10px 50px 0px;
+
+        }
+
         button {
             margin-top: 10px;
             width: 100%;
             height: 30px;
             background-color: #6f0699;
-            color: #fff;
+            color: #ffffff;
             border: none;
             border-radius: 10px;
             cursor: pointer;
@@ -83,6 +92,14 @@
         button:hover {
             background-color: #6f0699b9;
         }
+
+        h2 {
+            background-color: transparent;
+            text-align: center;
+            height: 5px;
+            font-size: 18px;
+            margin-top: 10px;
+        }
     </style>
 
 </head>
@@ -90,33 +107,46 @@
 <body>
 
     <header>
-        <h3>EXERCÍCIO #02</h3>
+        <h3>EXERCÍCIO #10</h3>
     </header>
 
     <div>
         <form>
-            <span>Leia os valores A e B. Troque os valores entre as duas variáveis. A variável A passa a possuir o valor
-                da variável B e a variável B passa a possuir o valor da A.</span>
-            <input type="text" id="numA" placeholder="Digite um valor A">
-            <input type="text" id="numB" placeholder="Digite um valor B">
-            <button onclick="go()">Enviar</button>
+            <span>Desenvolva um sistema, onde o usuário informa três números. Quando clicado em um botão informe qual
+                dos três é o menor</span>
+
+            <input type="number" placeholder="Valor 1" id="v1">
+            <input type="number" placeholder="Valor 2" id="v2">
+            <input type="number" placeholder="Valor 3" id="v3">
+
+            <input type="button" value="Enviar" onclick="menor()">
+
+            <h2 id="mensagem"></h2>
         </form>
     </div>
-
 </body>
 
 <script>
-    const go = () => {
-        var numberA = document.getElementById('numA').value
-        var numberB = document.getElementById('numB').value
-        var numberC = numberB
-        var numberB = numberA
-        var numberA = numberC
+    function menor() {
+        //Valores
+        var v1 = document.getElementById('v1').value
+        var v2 = document.getElementById('v2').value
+        var v3 = document.getElementById('v3').value
 
+        //lógica
+        var menorValor
 
-        alert('O valor de A: ' + numberA + '\n' +
-            'O valor de B: ' + numberB
-        )
+        if (v1 < v2 && v1 < v3) {
+            menorValor = v1
+        } else if (v2 < v1 && v2 < v3) {
+            menorValor = v2
+        } else {
+            menorValor = v3
+        }
+
+        //Mensagem
+        document.getElementById('mensagem').innerHTML = "O menor valor é: " + menorValor
+
     }
 
 </script>
